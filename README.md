@@ -6,3 +6,6 @@
 
 ### Run
     docker-compose up
+    
+### NOTE:
+Please change passwords in the .yml file before running
