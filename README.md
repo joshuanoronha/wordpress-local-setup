@@ -5,3 +5,4 @@
 - Docker compose
 
 ### Run
+    docker-compose up
