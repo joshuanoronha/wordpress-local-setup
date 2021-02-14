@@ -1,0 +1,27 @@
+
+services:
+  wordpress:
+    image: wordpress:5.6.1-apache
+    container_name: wordpress-blog
+    depends_on:
+      - mysql
+    ports:
+      - "8000:80"
+      - "443:443"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+  mysql:
+    image: mysql:5.6.51
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password 
